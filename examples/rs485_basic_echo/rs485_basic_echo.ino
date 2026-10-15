@@ -1,5 +1,5 @@
 /**
- * @file      rs485_dual_basic_echo.ino
+ * @file      rs485_basic_echo.ino
  * @author    Lewis He (lewishe@outlook.com)
  * @license   MIT
  * @copyright Copyright (c) 2026  ShenZhen XinYuan Electronic Technology Co., Ltd

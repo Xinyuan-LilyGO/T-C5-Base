@@ -1,5 +1,5 @@
 /**
- * @file      can_speed_test.ino
+ * @file      can_rs485_dual_echo_back.ino
  * @author    Lewis He (lewishe@outlook.com)
  * @license   MIT
  * @copyright Copyright (c) 2026  ShenZhen XinYuan Electronic Technology Co., Ltd
