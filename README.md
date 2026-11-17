@@ -45,6 +45,7 @@ This repository provides Arduino and ESP-IDF test examples for the LilyGo T-C5-B
 Main features:
 
 - RISC-V MCU with 2.4 and 5 GHz dual-band Wi-Fi 6, Bluetooth 5 (LE), and IEEE 802.15.4 (Zigbee, Thread)
+- Flash: 16MB + PSRAM: 8MB
 - Non-isolated RS485 and CAN transceivers
 - 7 to 40 V DC input through an XT30 connector
 - Stackable expansion design, supporting up to RS485 x2 and CAN x2 at the same time
@@ -106,21 +107,21 @@ Main features:
 2. Install [ESP32 Arduino core](https://docs.espressif.com/projects/arduino-esp32/en/latest/) with ESP32-C5 support.
 3. Select the `ESP32C5 Dev Module` board, and set the other options according to the table below.
 
-    | Name                                 | Value                                                                                           |
-    | ------------------------------------ | ----------------------------------------------------------------------------------------------- |
-    | Board                                | **ESP32C5 Dev Module**                                                                          |
-    | Port                                 | Your port                                                                                       |
-    | USB CDC On Boot                      | Enable                                                                                          |
-    | CPU Frequency                        | 240MHZ(WiFi)                                                                                    |
-    | Core Debug Level                     | None                                                                                            |
-    | Erase All Flash Before Sketch Upload | Disable                                                                                         |
-    | Flash Mode                           | QIO                                                                                             |
-    | Flash Frequency                      | 80MHz                                                                                           |
-    | Flash Size                           | **16MB(128Mb)**                                                                                 |
-    | Arduino Runs On                      | Core1                                                                                           |
-    | Partition Scheme                     | **16M Flash (3MB APP/9.9MB FATFS)**                                                             |
-    | PSRAM                                | CAN and basic examples can use Enabled. Dual RS485 speed tests are recommended to use Disabled. |
-    | Upload Speed                         | 921600                                                                                          |
+    | Name                                 | Value                               |
+    | ------------------------------------ | ----------------------------------- |
+    | Board                                | **ESP32C5 Dev Module**              |
+    | Port                                 | Your port                           |
+    | USB CDC On Boot                      | Enable                              |
+    | CPU Frequency                        | 240MHZ(WiFi)                        |
+    | Core Debug Level                     | None                                |
+    | Erase All Flash Before Sketch Upload | Disable                             |
+    | Flash Mode                           | QIO                                 |
+    | Flash Frequency                      | 80MHz                               |
+    | Flash Size                           | **16MB(128Mb)**                     |
+    | Arduino Runs On                      | Core1                               |
+    | Partition Scheme                     | **16M Flash (3MB APP/9.9MB FATFS)** |
+    | PSRAM                                | Enabled                             |
+    | Upload Speed                         | 921600                              |
 
 4. Open any `.ino` file under `examples/`.
 5. Select the board serial port.

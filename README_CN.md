@@ -46,6 +46,7 @@
 主要特性：
 
 - 2.4&5 GHz 双频 Wi-Fi 6、Bluetooth 5 (LE) 和 IEEE 802.15.4 (Zigbee, Thread) 连接性能的 RISC-V MCU
+- Flash: 16MB + PSRAM: 8MB
 - 非隔离型RS485和CAN收发器
 - 支持 7-40 V 直流输入，使用 XT30 接口
 - 最多支持 RS485x2 和 CANx2 扩展共存，堆叠设计
@@ -107,21 +108,21 @@
 2. 安装包含 ESP32-C5 支持的 [ESP32 Arduino core](https://docs.espressif.com/projects/arduino-esp32/en/latest/)
 3. 选择 `ESP32C5 Dev Module`开发板,其他选项根据下方列表中进行选择
 
-    | Name                                 | Value                                                |
-    | ------------------------------------ | ---------------------------------------------------- |
-    | Board                                | **ESP32C5 Dev Module**                               |
-    | Port                                 | Your port                                            |
-    | USB CDC On Boot                      | Enable                                               |
-    | CPU Frequency                        | 240MHZ(WiFi)                                         |
-    | Core Debug Level                     | None                                                 |
-    | Erase All Flash Before Sketch Upload | Disable                                              |
-    | Flash Mode                           | QIO                                                  |
-    | Flash Frequency                      | 80MHz                                                |
-    | Flash Size                           | **16MB(128Mb)**                                      |
-    | Arduino Runs On                      | Core1                                                |
-    | Partition Scheme                     | **16M Flash (3MB APP/9.9MB FATFS)**                  |
-    | PSRAM                                | CAN/普通示例可 Enabled；双路 RS485 测速建议 Disabled |
-    | Upload Speed                         | 921600                                               |
+    | Name                                 | Value                               |
+    | ------------------------------------ | ----------------------------------- |
+    | Board                                | **ESP32C5 Dev Module**              |
+    | Port                                 | Your port                           |
+    | USB CDC On Boot                      | Enable                              |
+    | CPU Frequency                        | 240MHZ(WiFi)                        |
+    | Core Debug Level                     | None                                |
+    | Erase All Flash Before Sketch Upload | Disable                             |
+    | Flash Mode                           | QIO                                 |
+    | Flash Frequency                      | 80MHz                               |
+    | Flash Size                           | **16MB(128Mb)**                     |
+    | Arduino Runs On                      | Core1                               |
+    | Partition Scheme                     | **16M Flash (3MB APP/9.9MB FATFS)** |
+    | PSRAM                                | Enabled                             |
+    | Upload Speed                         | 921600                              |
 
 4. 打开 `examples/` 下任意 `.ino` 文件.
 5. 选择板子的串口端口.
