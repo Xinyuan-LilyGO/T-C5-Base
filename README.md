@@ -33,7 +33,7 @@
   - [Can CAN go above 1 Mbit/s?](#can-can-go-above-1-mbits)
   - [Why is the RS485 maximum speed 5 Mbps?](#why-is-the-rs485-maximum-speed-5-mbps)
   - [RS485 has no data or persistent bad frames](#rs485-has-no-data-or-persistent-bad-frames)
-  - [Boot log reports **psram_mspi: Failed to allocate dummy cacheline for PSRAM memory barrier!**](#boot-log-reports-psram_mspi-failed-to-allocate-dummy-cacheline-for-psram-memory-barrier)
+  - [Boot log reports **psram\_mspi: Failed to allocate dummy cacheline for PSRAM memory barrier!**](#boot-log-reports-psram_mspi-failed-to-allocate-dummy-cacheline-for-psram-memory-barrier)
 - [Resources](#resources)
   - [Schematic](#schematic)
   - [PCB Dimensions](#pcb-dimensions)
@@ -106,21 +106,21 @@ Main features:
 2. Install [ESP32 Arduino core](https://docs.espressif.com/projects/arduino-esp32/en/latest/) with ESP32-C5 support.
 3. Select the `ESP32C5 Dev Module` board, and set the other options according to the table below.
 
-    | Name                                 | Value                                                |
-    | ------------------------------------ | ---------------------------------------------------- |
-    | Board                                | **ESP32C5 Dev Module**                               |
-    | Port                                 | Your port                                            |
-    | USB CDC On Boot                      | Enable                                               |
-    | CPU Frequency                        | 240MHZ(WiFi)                                         |
-    | Core Debug Level                     | None                                                 |
-    | Erase All Flash Before Sketch Upload | Disable                                              |
-    | Flash Mode                           | QIO                                                  |
-    | Flash Frequency                      | 80MHz                                                |
-    | Flash Size                           | **16MB(128Mb)**                                      |
-    | Arduino Runs On                      | Core1                                                |
-    | Partition Scheme                     | **16M Flash (3MB APP/9.9MB FATFS)**                  |
+    | Name                                 | Value                                                                                           |
+    | ------------------------------------ | ----------------------------------------------------------------------------------------------- |
+    | Board                                | **ESP32C5 Dev Module**                                                                          |
+    | Port                                 | Your port                                                                                       |
+    | USB CDC On Boot                      | Enable                                                                                          |
+    | CPU Frequency                        | 240MHZ(WiFi)                                                                                    |
+    | Core Debug Level                     | None                                                                                            |
+    | Erase All Flash Before Sketch Upload | Disable                                                                                         |
+    | Flash Mode                           | QIO                                                                                             |
+    | Flash Frequency                      | 80MHz                                                                                           |
+    | Flash Size                           | **16MB(128Mb)**                                                                                 |
+    | Arduino Runs On                      | Core1                                                                                           |
+    | Partition Scheme                     | **16M Flash (3MB APP/9.9MB FATFS)**                                                             |
     | PSRAM                                | CAN and basic examples can use Enabled. Dual RS485 speed tests are recommended to use Disabled. |
-    | Upload Speed                         | 921600                                               |
+    | Upload Speed                         | 921600                                                                                          |
 
 4. Open any `.ino` file under `examples/`.
 5. Select the board serial port.
@@ -181,22 +181,22 @@ The default serial monitor baud rate is `115200`.
 
 Arduino examples:
 
-| Example                                 | Type      | Description                                                                                                                        |
-| --------------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `examples/blink`                        | Basic     | GPIO8 green LED blinking example. CAN/RS485 Shield is not required.                                                                |
-| `examples/wifi_scan`                    | Basic     | Wi-Fi scan example. CAN/RS485 Shield is not required.                                                                              |
-| `examples/can_basic_echo`               | CAN       | Single CAN echo. Select CAN1 or CAN2 with `ACTIVE_CAN`; received frames are sent back unchanged. Requires two boards or another CAN node for ACK. |
-| `examples/can_dual_basic_echo`          | CAN       | Single-board dual CAN echo-back. CAN1 sends to CAN2, then CAN2 echoes back to CAN1. Supports OLED PASS/FAIL display, and GPIO8 LED blinks for 300 ms when the test passes. |
-| `examples/can_speed_test`               | CAN       | Single CAN speed test. Normal mode requires two boards or another CAN node.                                                        |
-| `examples/can_dual_speed_test`          | CAN       | Dual CAN mutual speed test. Connect CAN1/CAN2 on the same board to the same CAN bus for mutual TX/RX. Supports OLED status display. |
-| `examples/can_advanced`                 | CAN       | Dual CAN forwarding and diagnostics example, including filtering and bus-off recovery logic.                                       |
-| `examples/rs485_basic_echo`             | RS485     | Single RS485 echo. Select RS4851 or RS4852 with `ACTIVE_RS485`; serial monitor input is sent to the RS485 bus, and bus data is printed back to serial. |
-| `examples/rs485_dual_basic_echo`        | RS485     | Single-board dual RS485 echo-back. RS4851 sends to RS4852, then RS4852 echoes back to RS4851. Supports OLED PASS/FAIL display, and GPIO8 LED blinks for 300 ms when the test passes. |
-| `examples/rs485_speed_test`             | RS485     | Single RS485 speed test.                                                                                                          |
-| `examples/rs485_dual_speed_test`        | RS485     | Dual RS485 mutual speed test using Arduino `HardwareSerial` and manual DE control.                                                |
-| `examples/rs485_dual_driver_speed_test` | RS485     | Dual RS485 Arduino API speed test, used to verify the stable speed of a pure Arduino implementation.                              |
-| `examples/rs485_modbus_module`          | RS485     | Modbus RTU host example. The default function code is `0x03`.                                                                      |
-| `examples/can_rs485_dual_echo_back`     | Combined  | Single-board dual CAN plus dual RS485 echo-back test, used to verify CAN/RS485 Shield operation at the same time.                 |
+| Example                                 | Type     | Description                                                                                                                                                                          |
+| --------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `examples/blink`                        | Basic    | GPIO8 green LED blinking example. CAN/RS485 Shield is not required.                                                                                                                  |
+| `examples/wifi_scan`                    | Basic    | Wi-Fi scan example. CAN/RS485 Shield is not required.                                                                                                                                |
+| `examples/can_basic_echo`               | CAN      | Single CAN echo. Select CAN1 or CAN2 with `ACTIVE_CAN`; received frames are sent back unchanged. Requires two boards or another CAN node for ACK.                                    |
+| `examples/can_dual_basic_echo`          | CAN      | Single-board dual CAN echo-back. CAN1 sends to CAN2, then CAN2 echoes back to CAN1. Supports OLED PASS/FAIL display, and GPIO8 LED blinks for 300 ms when the test passes.           |
+| `examples/can_speed_test`               | CAN      | Single CAN speed test. Normal mode requires two boards or another CAN node.                                                                                                          |
+| `examples/can_dual_speed_test`          | CAN      | Dual CAN mutual speed test. Connect CAN1/CAN2 on the same board to the same CAN bus for mutual TX/RX. Supports OLED status display.                                                  |
+| `examples/can_advanced`                 | CAN      | Dual CAN forwarding and diagnostics example, including filtering and bus-off recovery logic.                                                                                         |
+| `examples/rs485_basic_echo`             | RS485    | Single RS485 echo. Select RS4851 or RS4852 with `ACTIVE_RS485`; serial monitor input is sent to the RS485 bus, and bus data is printed back to serial.                               |
+| `examples/rs485_dual_basic_echo`        | RS485    | Single-board dual RS485 echo-back. RS4851 sends to RS4852, then RS4852 echoes back to RS4851. Supports OLED PASS/FAIL display, and GPIO8 LED blinks for 300 ms when the test passes. |
+| `examples/rs485_speed_test`             | RS485    | Single RS485 speed test.                                                                                                                                                             |
+| `examples/rs485_dual_speed_test`        | RS485    | Dual RS485 mutual speed test using Arduino `HardwareSerial` and manual DE control.                                                                                                   |
+| `examples/rs485_dual_driver_speed_test` | RS485    | Dual RS485 Arduino API speed test, used to verify the stable speed of a pure Arduino implementation.                                                                                 |
+| `examples/rs485_modbus_module`          | RS485    | Modbus RTU host example. The default function code is `0x03`.                                                                                                                        |
+| `examples/can_rs485_dual_echo_back`     | Combined | Single-board dual CAN plus dual RS485 echo-back test, used to verify CAN/RS485 Shield operation at the same time.                                                                    |
 
 > [!NOTE]
 >
@@ -208,10 +208,10 @@ Arduino examples:
 
 ESP-IDF examples:
 
-| Example                                  | Type  | Description                                                                                                      |
-| ---------------------------------------- | ----- | ---------------------------------------------------------------------------------------------------------------- |
+| Example                                  | Type  | Description                                                                                                                               |
+| ---------------------------------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | `idf-examples/idf_can_dual_basic_echo`   | CAN   | ESP-IDF dual CAN echo-back example. CAN1 sends to CAN2, then CAN2 echoes back to CAN1. Default `1 Mbit/s`, pure ESP-IDF TWAI on-chip API. |
-| `idf-examples/idf_rs485_dual_speed_test` | RS485 | ESP-IDF dual RS485 speed test using the ESP-IDF UART RS485 driver. Tested stable at `5 Mbps` with 25 m cable and 120R termination. |
+| `idf-examples/idf_rs485_dual_speed_test` | RS485 | ESP-IDF dual RS485 speed test using the ESP-IDF UART RS485 driver. Tested stable at `5 Mbps` with 25 m cable and 120R termination.        |
 
 > [!NOTE]
 >
@@ -230,14 +230,14 @@ ESP-IDF examples:
 
 ### RS485 Pins
 
-| ESP32-C5 | SP3485EEN        |
-| -------- | ---------------- |
-| GPIO4    | RS4851_RX        |
-| GPIO5    | RS4851_TX        |
-| GPIO27   | RS4851_DTR / RTS |
-| GPIO24   | RS4852_RX        |
-| GPIO23   | RS4852_TX        |
-| GPIO7    | RS4852_DTR / RTS |
+| ESP32-C5 | SP3485EEN  |
+| -------- | ---------- |
+| GPIO4    | RS4851_RX  |
+| GPIO5    | RS4851_TX  |
+| GPIO27   | RS4851_DTR |
+| GPIO24   | RS4852_RX  |
+| GPIO23   | RS4852_TX  |
+| GPIO7    | RS4852_DTR |
 
 ### LED Pin
 
@@ -258,22 +258,22 @@ ESP-IDF examples:
 
 ## Speed Summary
 
-| Interface | Condition                                              | Highest stable result |
-| --------- | ------------------------------------------------------ | --------------------- |
-| CAN       | 25 m twisted pair cable, with 120R termination          | 1 Mbit/s              |
-| CAN       | 20 cm Dupont wire, without 120R termination             | 125 kbit/s            |
-| RS485     | 25 m cable, with 120R, Arduino-ESP32 4.0.0-alpha1       | 5 Mbps                |
-| RS485     | 25 m cable, with 120R, ESP-IDF UART RS485 driver        | 5 Mbps                |
+| Interface | Condition                                         | Highest stable result |
+| --------- | ------------------------------------------------- | --------------------- |
+| CAN       | 25 m twisted pair cable, with 120R termination    | 1 Mbit/s              |
+| CAN       | 20 cm Dupont wire, without 120R termination       | 125 kbit/s            |
+| RS485     | 25 m cable, with 120R, Arduino-ESP32 4.0.0-alpha1 | 5 Mbps                |
+| RS485     | 25 m cable, with 120R, ESP-IDF UART RS485 driver  | 5 Mbps                |
 
 CAN has been confirmed at the standard Classic CAN rate of **1 Mbit/s**.
 
 ## Electrical Parameters
 
-| Feature                  | Details |
-| ------------------------ | ------- |
-| USB-C input voltage      | 5V      |
-| XT30 DC input range      | 7-40V   |
-| 3.3V header output current capability | 500mA |
+| Feature                               | Details |
+| ------------------------------------- | ------- |
+| USB-C input voltage                   | 5V      |
+| XT30 DC input range                   | 7-40V   |
+| 3.3V header output current capability | 500mA   |
 
 > [!IMPORTANT]
 >

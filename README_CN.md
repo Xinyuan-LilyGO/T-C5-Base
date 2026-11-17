@@ -210,10 +210,10 @@ Arduino 示例：
 
 ESP-IDF 示例：
 
-| 示例                                       | 类型  | 说明                                                                                                                |
-| ------------------------------------------ | ----- | ------------------------------------------------------------------------------------------------------------------- |
-| `idf-examples/idf_can_dual_basic_echo`     | CAN   | ESP-IDF 双路 CAN echo-back 示例.CAN1 发送到 CAN2，CAN2 回传到 CAN1，默认 `1 Mbit/s`，纯 ESP-IDF TWAI on-chip API    |
-| `idf-examples/idf_rs485_dual_speed_test`   | RS485 | ESP-IDF 双路 RS485 速率测试，使用 ESP-IDF UART RS485 driver，实测 25 m 线材加 120R 终端电阻可稳定到 `5 Mbps`        |
+| 示例                                     | 类型  | 说明                                                                                                             |
+| ---------------------------------------- | ----- | ---------------------------------------------------------------------------------------------------------------- |
+| `idf-examples/idf_can_dual_basic_echo`   | CAN   | ESP-IDF 双路 CAN echo-back 示例.CAN1 发送到 CAN2，CAN2 回传到 CAN1，默认 `1 Mbit/s`，纯 ESP-IDF TWAI on-chip API |
+| `idf-examples/idf_rs485_dual_speed_test` | RS485 | ESP-IDF 双路 RS485 速率测试，使用 ESP-IDF UART RS485 driver，实测 25 m 线材加 120R 终端电阻可稳定到 `5 Mbps`     |
 
 > [!NOTE]
 >
@@ -232,14 +232,14 @@ ESP-IDF 示例：
 
 ### RS485 引脚
 
-| ESP32-C5 | SP3485EEN        |
-| -------- | ---------------- |
-| GPIO4    | RS4851_RX        |
-| GPIO5    | RS4851_TX        |
-| GPIO27   | RS4851_DTR / RTS |
-| GPIO24   | RS4852_RX        |
-| GPIO23   | RS4852_TX        |
-| GPIO7    | RS4852_DTR / RTS |
+| ESP32-C5 | SP3485EEN  |
+| -------- | ---------- |
+| GPIO4    | RS4851_RX  |
+| GPIO5    | RS4851_TX  |
+| GPIO27   | RS4851_DTR |
+| GPIO24   | RS4852_RX  |
+| GPIO23   | RS4852_TX  |
+| GPIO7    | RS4852_DTR |
 
 ### LED 引脚
 
